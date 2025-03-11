@@ -1,4 +1,5 @@
-﻿#include <stdio.h>
+﻿#pragma once
+#include <stdio.h>
 
 // Base64 char table function - used internally for decoding
 unsigned int b64_int(unsigned int ch);

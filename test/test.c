@@ -1,5 +1,5 @@
 #include "rbase64.h"
-#include "test/runit/src//runit.h"
+#include "runit.h"
 #include "stdlib.h"
 #include "stdint.h"
 
