@@ -9,18 +9,9 @@
 #define STRING_B "9TrJUQ=="
 #define STRING_C "9TrJUfA="
 
-#define HEXNUM_A         \
-    {                    \
-        0xF5, 0x3A, 0xC9 \
-    }
-#define HEXNUM_B               \
-    {                          \
-        0xF5, 0x3A, 0xC9, 0x51 \
-    }
-#define HEXNUM_C                     \
-    {                                \
-        0xF5, 0x3A, 0xC9, 0x51, 0xF0 \
-    }
+#define HEXNUM_A {0xF5, 0x3A, 0xC9}
+#define HEXNUM_B {0xF5, 0x3A, 0xC9, 0x51}
+#define HEXNUM_C {0xF5, 0x3A, 0xC9, 0x51, 0xF0}
 
 #define HEXNUM_D                                                                                                       \
     {0x12, 0x49, 0x1a, 0x47, 0x1a, 0x45, 0x08, 0x97, 0x01, 0x12, 0x40, 0x13, 0x4b, 0x1b, 0x68, 0xdb, 0x6a, 0x9a, 0x42, \
@@ -217,7 +208,7 @@ void test_decode_encode_arrays_plus(void)
     unsigned char* result_out_d = malloc((sizeof(char) * result_size_d) + 1);
 
     result_size_d = b64_decode(out_d, out_size_d, result_out_d);
-    
+
     runit_true(memcmp(result_out_d, test_d, result_size_d) == 0);
 
     free(result_out_d);
@@ -371,7 +362,6 @@ int main()
     test_b64_decodef();
     puts("\nTesting test_b64_text_encode() ...\n");
     test_b64_text_encode();
-
 
     puts("\nTesting test_b64_text_decode() ...\n");
     test_b64_text_decode();
