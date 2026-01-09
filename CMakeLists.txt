@@ -43,7 +43,12 @@ set(FILES_FOR_FORMATTING
         test/test.c
         test/test.h
 )
-include(${CMAKE_BINARY_DIR}/_deps/rlibhelper-src/format.cmake)
+
+if(EXISTS "${rlibhelper_SOURCE_DIR}/format.cmake")
+    include(${rlibhelper_SOURCE_DIR}/format.cmake)
+else()
+    message(WARNING "format.cmake file not found")
+endif()
 format_files(${PROJECT_NAME} SOURCES ${FILES_FOR_FORMATTING})
 
 
